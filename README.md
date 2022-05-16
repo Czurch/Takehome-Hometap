@@ -21,6 +21,7 @@ To Run the Backend:
 3. Open up localhost:8000 to view reponses
 
 To Test:
+
 -localhost:8000/homedata/property/<address>/<zip> - will return the raw json for the property you enter.
 -localhost:8000/homedata/property/<address>/<zip>/sewer - returns the type of sewer the property has
 -localhost:8000/homedata/property/<address>/<zip>/sewer/<sewer_type> - returns true or false if the param for sewer_type matches the property's sewage type.
