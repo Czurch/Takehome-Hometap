@@ -21,10 +21,9 @@ To Run the Backend:
 3. Open up localhost:8000 to view reponses
 
 To Test:
-
 -localhost:8000/homedata/property/<address>/<zip> - will return the raw json for the property you enter.
--localhost:8000/homedata/property/<address>/<zip>/sewer - returns the type of sewer the property has
--localhost:8000/homedata/property/<address>/<zip>/sewer/<sewer_type> - returns true or false if the param for sewer_type matches the property's sewage type.
+   -localhost:8000/homedata/property/<address>/<zip>/sewer - returns the type of sewer the property has
+   -localhost:8000/homedata/property/<address>/<zip>/sewer/<sewer_type> - returns true or false if the param for sewer_type matches the property's sewage type.
 
 I have left the API call to my Postman Mock Server so you can see the functional version of the code.
 Without the authentication parameters, my code will not serve up data from https://api.housecanary.com/v2/property/details?address=123+Main+St&zipcode=94132
