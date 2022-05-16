@@ -1,0 +1,35 @@
+What the “Product Manager” tells you:
+•	We have a web app that homeowners interact with to provide us information about their home.
+•	New feature: The web app should prompt homeowners with an additional question if we believe their home has a septic system.
+•	We believe that we can get the answer to the septic system question from the third party API described here: https://api-docs.housecanary.com/#property-details.
+•	We want to assume that over time, we may find other third parties with this info, or this particular third party may change their API, and we want to leave the web app implementation alone. Meaning that you should build an intermediary web service that consumes data from the HouseCanary API described at the link above, and make that information available through a custom API endpoint you design for our web app to use.
+
+Guidelines for this exercise:
+•	You should implement the intermediary web service that exposes a custom API for answering the question above, and calls the third party (HouseCanary) API to get the relevant data.
+•	You do not need to implement any aspect of the web app that has the homeowner-facing interaction.
+•	Please note that we are a predominantly macOS and Python shop. We would prefer the submission to be created in one of the Python-based web frameworks if you are comfortable with those.
+•	If you look at this problem statement and conclude that in a real scenario you would build something that has a fundamentally different architecture, it would be interesting to hear about that, and you could talk about the possibility of a different design and rationale when you present your result. But in this case, we want to see you design an API, call an API, and implement an API, so consider those aspects as requirements for what you actually implement.
+•	The HouseCanary API above has public documentation, but the API itself is restricted to organizations with paid access. We recommend that you mock up API responses in unit tests or via an API mocking tool (e.g. Swaggerhub, Postman Mock Server, Stoplight).
+•	Give thought to security, scalability, and maintainability. 
+•	Our goal is to get a sense of how you approach problems, and get a sense of what it would be like to work together, not to give you a huge multi-day homework assignment. If some of your ideas for a completed product would turn this into a massive project, you may wish to write those up as suggested “Next Steps”.
+•	Provide a link to a GitHub repository with your code and a README that explains how to run it.
+
+
+My Thoughts:
+•	build an intermediary web service that consumes data from the HouseCanary API described at the link above, and make that information available through a custom API endpoint you design for our web app to use
+•   Must be in python web-framework. Lets do some research... https://www.section.io/engineering-education/choosing-between-django-flask-and-fastapi/
+    -Django is the one that comes to mind since it one of the most well known frameworks which make it great experience to be exposed to
+    -Flask might work better for a simple project since it is incredibly lightweight and we wont utilize most features of Django
+    -FastAPI seems like the correct choice due to its JSON validating tools, however given the time frame and the lack of community resources it might be better to stick with a framework that is easy to research.
+
+Django will be the framework of choice.
+My version of python is 3.8.10, Django is 4.0.4
+
+we will access a 3rd party url to gather data about a customers home, to determine how we should proceed with forms on the frontend
+
+this would reside in an django app that gets that data and would serve up specific data on demand
+
+created postman mock up the external API
+
+My thinking is that the frontend could either create a request for the entire json data, OR just specific fields
+(e.g. api for just hasSeptic? or no_of_stories?) Based on requirements I will need just a specific field 
